@@ -11,7 +11,7 @@ import SwiftUI
 struct BooksAppApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            RootTabView()
         }
     }
 }
