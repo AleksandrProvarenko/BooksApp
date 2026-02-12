@@ -19,7 +19,6 @@ final class BooksAPIService: NetworkServiceProtocol {
     func fetchBooks(nextPageURL: URL?) async throws -> BooksResponse {
         
         let url = nextPageURL ?? baseURL
-
         let (data, response) = try await session.data(from: url)
 
         guard let http = response as? HTTPURLResponse else {
