@@ -9,9 +9,13 @@ import SwiftUI
 
 @main
 struct BooksAppApp: App {
+    
+    @StateObject private var favorites = FavoritesStore()
+    
     var body: some Scene {
         WindowGroup {
             RootTabView()
+                .environmentObject(favorites)
         }
     }
 }
