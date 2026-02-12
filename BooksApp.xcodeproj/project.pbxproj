@@ -6,6 +6,10 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		0B6C3A9C2F3DF3510052084D /* NukeUI in Frameworks */ = {isa = PBXBuildFile; productRef = 0B6C3A9B2F3DF3510052084D /* NukeUI */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		0B81E3BB2F3C7D580024F168 /* BooksApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BooksApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -23,16 +27,25 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0B6C3A9C2F3DF3510052084D /* NukeUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0B6C3A9A2F3DF3510052084D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		0B81E3B22F3C7D580024F168 = {
 			isa = PBXGroup;
 			children = (
 				0B81E3BD2F3C7D580024F168 /* BooksApp */,
+				0B6C3A9A2F3DF3510052084D /* Frameworks */,
 				0B81E3BC2F3C7D580024F168 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -65,6 +78,7 @@
 			);
 			name = BooksApp;
 			packageProductDependencies = (
+				0B6C3A9B2F3DF3510052084D /* NukeUI */,
 			);
 			productName = BooksApp;
 			productReference = 0B81E3BB2F3C7D580024F168 /* BooksApp.app */;
@@ -94,6 +108,9 @@
 			);
 			mainGroup = 0B81E3B22F3C7D580024F168;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				0B6C3A992F3DF3380052084D /* XCRemoteSwiftPackageReference "Nuke" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 0B81E3BC2F3C7D580024F168 /* Products */;
 			projectDirPath = "";
@@ -340,6 +357,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		0B6C3A992F3DF3380052084D /* XCRemoteSwiftPackageReference "Nuke" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kean/Nuke";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 12.8.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		0B6C3A9B2F3DF3510052084D /* NukeUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0B6C3A992F3DF3380052084D /* XCRemoteSwiftPackageReference "Nuke" */;
+			productName = NukeUI;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 0B81E3B32F3C7D580024F168 /* Project object */;
 }
