@@ -20,10 +20,8 @@ struct BooksListView: View {
                     
                 case .idle:
                     ProgressView("Loading...")
-                        .task { await viewModel.loadInitial() }
                 case .loading:
                     ProgressView("Loading...")
-                        .task { await viewModel.loadInitial() }
                 case .error(let message):
                     VStack(spacing: 12) {
                         Text(message)
@@ -49,9 +47,13 @@ struct BooksListView: View {
                         if viewModel.canLoadMore {
                             HStack {
                                 Spacer()
+                                
                                 ProgressView()
-                                    .task { await viewModel.loadNextPage() }
+                                
                                 Spacer()
+                            }
+                            .onAppear {
+                                Task { await viewModel.loadNextPage() }
                             }
                         }
                     }
@@ -60,7 +62,9 @@ struct BooksListView: View {
             .navigationTitle("Books")
         }
         .task {
-            await viewModel.loadInitial()
+            if case .idle = viewModel.state {
+                await viewModel.loadInitial()
+            }
         }
     }
 }

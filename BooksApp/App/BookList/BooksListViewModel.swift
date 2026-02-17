@@ -16,6 +16,7 @@ final class BooksListViewModel: ObservableObject {
     
     private let api: NetworkServiceProtocol
     private var nextURL: URL?
+    private var isLoadingNextPage = false
     
     init(api: NetworkServiceProtocol) {
         self.api = api
@@ -31,9 +32,10 @@ final class BooksListViewModel: ObservableObject {
     }
     
     func loadNextPage() async {
-        
-        if case .loading = state, !books.isEmpty {}
-        
+        guard !isLoadingNextPage else { return }
+        isLoadingNextPage = true
+        defer { isLoadingNextPage = false }
+
         do {
             
             if books.isEmpty {
